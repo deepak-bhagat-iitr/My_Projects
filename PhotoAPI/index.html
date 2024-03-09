@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Photo Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+    }
+
+    #header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    #searchBar {
+      width: 400px;
+      margin-right: 10px;
+      display: flex;
+      
+    }
+
+
+  
+
+    #mainPhoto {
+      width: 400px;
+      height: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+      border: 4px solid #fff;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div  class="h-100 row justify-content-center align-items-center flex-column no-gutters">
+    <div id="searchBar" class="row no-gutters">
+      <input type="text" class="form-control mr-2 col-6" placeholder="Search..." aria-label="Recipient's username"
+        aria-describedby="basic-addon2">
+
+      <button type="button" class="btn col-2 btn-secondary">Search</button>
+    </div>
+
+
+    <img id="mainPhoto" src="https://source.unsplash.com/random/400*400?" alt="Main Photo">
+  </div>
+
+  <script>
+    function searchPhotos() {
+      var searchTerm = document.getElementById('searchInput').value;
+      var newSrc = 'https://source.unsplash.com/400x400/?' + searchTerm;
+      document.getElementById('mainPhoto').src = newSrc;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

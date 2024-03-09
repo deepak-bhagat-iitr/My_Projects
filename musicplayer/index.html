@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Player with Photo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="music-container">
+    <div  id="first">
+      <div>
+        friend
+      </div>
+      <div>
+
+      
+      <img id="image" src="music.jpg" alt="Music Photo" />
+    </div>
+      <div id="div1">
+
+      </div>
+      <div id="div2">
+        Husn
+      </div>
+      <div id="div3">
+        By Anuv Jain
+      </div>
+    </div>
+
+    <div id="second">
+      <audio src="husn.mp3" id="audio" controls></audio>
+    </div>
+    <div id="third">
+      <button onclick="setVolume('down')">
+        <img class="vol" src="vol.png" alt="down" />
+      </button>
+      <button id="resume" onclick="playPause()">
+        <img id="i1" src="resume.png" alt="resume" />
+        <img id="i2" src="pause.png" alt="pause" />
+      </button>
+      <button onclick="setVolume('up')"><img class="vol" src="up.png" alt="up" /></button>
+    </div>
+  </div>
+  <script>
+    var audio = document.getElementById("audio");
+
+    function playPause() {
+      if (audio.paused) {
+        audio.play();
+        document.getElementById("i1").style.display = "none";
+        document.getElementById("i2").style.display = "inline";
+      } else {
+        audio.pause();
+        document.getElementById("i2").style.display = "none";
+        document.getElementById("i1").style.display = "block";
+      }
+    }
+
+    function setVolume(direction) {
+      var currentVolume = audio.volume;
+
+      if (direction === "up" && currentVolume < 1.0) {
+        audio.volume += 0.1;
+      } else if (direction === "down" && currentVolume > 0.0) {
+        audio.volume -= 0.1;
+      }
+    }
+  </script>
+
+</body>
+
+</html>
